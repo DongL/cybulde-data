@@ -19,8 +19,6 @@ def initialize_dvc() -> None:
     run_shell_command("dvc config core.analytics false")
     run_shell_command("dvc config core.autostage true")
     run_shell_command("git add .dvc")
-
-    DATA_UTILS_LOGGER.info("Initializing DVC - commiting")
-    run_shell_command("git commit -nm 'Initialized DVC - complete'")
-    DATA_UTILS_LOGGER.info("Initializing DVC - logging done")
-    run_shell_command("git log")
+    run_shell_command("git add .")
+    run_shell_command("git commit -m 'Initialized DVC - done'")
+    run_shell_command("git log > ./dvc_init.log")

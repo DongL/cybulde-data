@@ -25,6 +25,11 @@ export
 guard-%:
 	@#$(or ${$*}, $(error $* is not set))
 
+## clean dvc setup env
+clean-dvc: up
+	$(DOCKER_COMPOSE_EXEC) rm -rf .dvc .dvcignore
+
+
 ## version-data
 version-data: up
 	$(DOCKER_COMPOSE_EXEC) python ./cybulde/version_data.py
