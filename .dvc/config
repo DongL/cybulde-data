@@ -1,2 +1,3 @@
 [core]
-    analytics = true
+    analytics = false
+    autostage = true
